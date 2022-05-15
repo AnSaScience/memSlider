@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width:100%;
+    height:100vh;
+    background-image: url('../img/Black_hole_artist_s_impression_pillars.jpg');
+    background-position: center;
+    background-size:cover;
+
+}
+
+.slider{
+    width: calc(100% - (0.1 * 100%));
+    max-width:calc( 100vh - 150px);
+    /* max-height: calc(100vh - ( 0.1 * 100vh)); */
+    overflow: hidden;
+    border:7px solid rgb(255, 255, 255);
+    /* center position */
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0,0,0,0.8);
+}
+
+.slides{
+    display: flex;
+    width: 400%;
+}
+
+.slide {
+    width:25%;
+    transition: 0.5s;
+}
+
