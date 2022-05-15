@@ -109,3 +109,29 @@ input[name="radio"]{
 #r4:checked ~ .s1{
     margin-left: -75%;
 }
+
+/* add actived event */
+
+#r1:checked ~ .controls .control:nth-child(1)::after{
+    background-color: blue;
+}
+
+#r2:checked ~ .controls .control:nth-child(2)::after{
+    background-color: blue;
+}
+
+#r3:checked ~ .controls .control:nth-child(3)::after{
+    background-color: blue;
+}
+
+#r4:checked ~ .controls .control:nth-child(4)::after{
+    background-color: blue;
+}
+
+/* mobile version  */
+@media screen and (max-width:860px){
+    .description{
+        font-size: 1.6rem;
+    }
+}
+
