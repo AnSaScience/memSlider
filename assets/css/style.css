@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width:100%;
+    height:100vh;
+    background-image: url('../img/Black_hole_artist_s_impression_pillars.jpg');
+    background-position: center;
+    background-size:cover;
+
+}
+
+.slider{
+    width: calc(100% - (0.1 * 100%));
+    max-width:calc( 100vh - 150px);
+    overflow: hidden;
+    border:7px solid rgb(255, 255, 255);
+    /* center position */
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0,0,0,0.8);
+}
+
+.slides{
+    display: flex;
+    width: 400%;
+}
+
+.slide {
+    width:25%;
+    transition: 0.5s;
+}
+
+.controls{
+    position: absolute;
+    bottom:0px;
+    right:20px;
+    display: flex;
+    gap:20px;
+}
+
+.control{
+
+    width: 20px;
+    height: 50px;
+    cursor: pointer;
+
+}
+
+.control::after{
+    content: "";
+    display: block;
+    position: relative;
+    top:25px;
+    transform: translateY(-50%);
+    background-color: yellow;
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    opacity: 0.4;
+    transition: 0.3s;
+}
+
+.control:hover::after{
+
+    transform: scale(1.1) translateY(-50%);
+    opacity: 0.9;
+
+}
+
+
+input[name="radio"]{
+     position: absolute;
+    /* visibility:hidden; */
+    display: none; 
+}
+
+.image{
+    width: 100%;
+   max-width:100%;
+}
+
+.description{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: aliceblue;
+    line-height: 50px;
+    padding-left: 20px;
+    font-size: 3rem;
+}
+
+#r1:checked ~ .s1{
+    margin-left: 0;
+}
+
+#r2:checked ~ .s1{
+    margin-left: -25%;
+}
+
+#r3:checked ~ .s1{
+    margin-left: -50%;
+}
+
+#r4:checked ~ .s1{
+    margin-left: -75%;
+}
+
+/* add actived event */
+
+#r1:checked ~ .controls .control:nth-child(1)::after{
+    background-color: blue;
+}
+
+#r2:checked ~ .controls .control:nth-child(2)::after{
+    background-color: blue;
+}
+
+#r3:checked ~ .controls .control:nth-child(3)::after{
+    background-color: blue;
+}
+
+#r4:checked ~ .controls .control:nth-child(4)::after{
+    background-color: blue;
+}
+
+/* mobile version  */
+@media screen and (max-width:860px){
+    .description{
+        font-size: 1.6rem;
+    }
+}
+
+ @media screen and (max-width:550px){
+    
+    .description{
+        padding-left: 0;
+        padding-bottom: 30px;
+        line-height: 30px;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .controls{
+       
+        bottom:0px;
+        right:50%;
+        transform: translateX(50%);        
+    }
+
+    .control{
+        height: 30px;
+    }
+
+    .control::after{
+        content: "";
+        top:15px;
+        transform: translateY(-50%);
+        background-color: yellow;
+        height: 20px;
+        width: 20px;
+        border-radius: 10px;
+        opacity: 0.4;
+        transition: 0.3s;
+    }
+}
