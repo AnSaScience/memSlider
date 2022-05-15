@@ -135,3 +135,36 @@ input[name="radio"]{
     }
 }
 
+ @media screen and (max-width:550px){
+    
+    .description{
+        padding-left: 0;
+        padding-bottom: 30px;
+        line-height: 30px;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .controls{
+       
+        bottom:0px;
+        right:50%;
+        transform: translateX(50%);        
+    }
+
+    .control{
+        height: 30px;
+    }
+
+    .control::after{
+        content: "";
+        top:15px;
+        transform: translateY(-50%);
+        background-color: yellow;
+        height: 20px;
+        width: 20px;
+        border-radius: 10px;
+        opacity: 0.4;
+        transition: 0.3s;
+    }
+}
